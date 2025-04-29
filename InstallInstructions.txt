@@ -1,0 +1,61 @@
+
+----------------------------------------------------------------------------------
+INSTALL INSTRUCTIONS TO USE A CONDA ENVIRONMENT
+----------------------------------------------------------------------------------
+1. Move the zip file to the directory where the app will run from.
+2. Unzip the main-dr_reconciliation.zip file
+3. Setup a New Conda Environment
+   a. Create a conda enviroment with the required dependincies to run the App.
+      conda env create -f environment.yml
+   b. Activate the conda environment now
+      conda activate dr_reconciliation
+4. Update the Config files for your environment
+   a. Modify the /data/accounts.toml file to add the primary and secondary accounts that the apps will monitor/use
+      The App reads this file dynamically and uses it to drive the dropdown menus
+   b. Modify the /.streamlit/secrets.toml file so that the streamlit app can access snowflake.
+      If Security requires you to use another method of connection, that can be modified in the init_connecction function in whitebear.py
+5. Run the App
+   streamlit run Home.py
+   Select the Accounts in the Dropdown
+   Select the Functionality you now want to explore
+     Copy History - There is a failover report showing the nodes
+     Reconciliation Report - There is a Reconciliation Report showing the pipes
+     Activate Pipes - will forces pipes to start running again
+
+
+----------------------------------------------------------------------------------
+INSTALL INSTRUCTIONS FOR PIP INSTALL USING STANDARD ENVIRONMENT
+----------------------------------------------------------------------------------
+1. Move the zip file to the directory where the app will run from.
+2. Unzip the main-dr_reconciliation.zip file
+3. pip install needed libraries so that you can run the App.
+   a. pip install streamlit
+   b. pip install pandas
+   c. pip install numpy
+   d. pip install --upgrade snowflake-connector-python
+   e. pip install --upgrade snowflake-snowpark-python
+   f. pip install --upgrade snowflake-snowpark-python[pandas]
+4. Update the Config files for your environment
+   a. Modify the /data/accounts.toml file to add the primary and secondary accounts that the apps will monitor/use
+      The App reads this file dynamically and uses it to drive the dropdown menus
+   b. Modify the /.streamlit/secrets.toml file so that the streamlit app can access snowflake.
+      If Security requires you to use another method of connection, that can be modified in the init_connecction function in whitebear.py
+5. Run the App
+   streamlit run Home.py
+   Select the Accounts in the Dropdown
+   Select the Functionality you now want to explore
+     Copy History - There is a failover report showing the nodes
+     Reconciliation Report - There is a Reconciliation Report showing the pipes
+     Activate Pipes - will forces pipes to start running again
+
+
+
+
+
+
+
+
+
+
+
+
